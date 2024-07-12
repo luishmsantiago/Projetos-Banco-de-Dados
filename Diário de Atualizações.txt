@@ -1,0 +1,14 @@
+Nome: Luis Henrique de Melo Santiago
+Objetivo: Construir um banco de dados relacional com as estruturas corporais
+
+Nome do Banco de dados: Sistemas Corporais
+
+Diário de Atualizações
+
+10-07-2024
+
+Adição de Nervos e criação de associação de nervos com músculos
+
+11-07-2024
+
+Atualização dos diagramas conceitual e lógico para adicionar informações de vasos, sistema nervoso central e sua conexão com SN periférico e órgãos.

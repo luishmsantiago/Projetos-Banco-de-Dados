@@ -12,3 +12,7 @@ Adição de Nervos e criação de associação de nervos com músculos
 11-07-2024
 
 Atualização dos diagramas conceitual e lógico para adicionar informações de vasos, sistema nervoso central e sua conexão com SN periférico e órgãos.
+
+13-07-2024
+
+Início da adição dos dados na documentação README.md

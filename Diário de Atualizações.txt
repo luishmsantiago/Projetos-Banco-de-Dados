@@ -16,3 +16,7 @@ Atualização dos diagramas conceitual e lógico para adicionar informações de
 13-07-2024
 
 Início da adição dos dados na documentação README.md
+
+14-07-2024
+
+Pequenas edições em DDL e DML

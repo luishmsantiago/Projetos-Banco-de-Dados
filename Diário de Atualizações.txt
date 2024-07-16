@@ -20,3 +20,7 @@ Início da adição dos dados na documentação README.md
 14-07-2024
 
 Pequenas edições em DDL e DML
+
+15-07-2024
+
+Atualizações no DDL e DML, principalmente em tabelas de órgãos, vasos e nervos.

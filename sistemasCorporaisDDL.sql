@@ -41,7 +41,6 @@ CREATE TABLE orgaos (
 	funcaoGeral VARCHAR(100) NOT NULL
 );
 
-
 CREATE TABLE sistemaNervosoCentral (
 	idSNC SERIAL PRIMARY KEY,
 	nome VARCHAR(60) NOT NULL,
@@ -132,5 +131,3 @@ CREATE TABLE vascularizar (
 	FOREIGN Key (idOsso) REFERENCES ossos (idOsso),
 	FOREIGN Key (idMusculo) REFERENCES musculos (idMusculo)
 );
-
-

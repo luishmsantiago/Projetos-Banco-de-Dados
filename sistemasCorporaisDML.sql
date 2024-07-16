@@ -27,14 +27,74 @@ INSERT INTO musculos (idMusculo, nome, descricao) -- braço
 
 ---------------------------------------------------------------------------------------------
 
-INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas) -- ombro
-	VALUES (1, 'Axilar', 'C5 e C6'),
-	       (2, 'Supra-escapular', 'C5 e C6'),
-	       (3, 'Subescapular Inferior', 'C5 e C6');
+INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas, funcaoSNA, funcaoOrgao, tipoNervo) -- ombro
+	VALUES (1, 'Axilar', 'C5 e C6', '', '', 'nervo periférico'),
+	       (2, 'Supra-escapular', 'C5 e C6', '', '', 'nervo periférico'),
+	       (3, 'Subescapular Inferior', 'C5 e C6', '', '', 'nervo periférico');
 
-INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas) -- braço
-	VALUES (4, 'Musculocutâneo', 'C5 e C6'),
-		   (5, 'Radial', 'C7 e C8');
+INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas, funcaoSNA, funcaoOrgao, tipoNervo) -- braço
+	VALUES (4, 'Musculocutâneo', 'C5 e C6', '', '', 'nervo periférico'),
+		   (5, 'Radial', 'C7 e C8', '', '', 'nervo periférico');
+
+---------------------------------------------------------------------------------------------
+
+INSERT INTO sncentralPeriSna (idConexao, caminhoImpulso, descricao, idSNC, idNervo) -- membro superior
+	VALUES (1, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 1),
+		   (2, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 2),
+		   (3, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 3),
+		   (4, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 4),
+		   (5, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 5);
+		   
+---------------------------------------------------------------------------------------------
+
+INSERT INTO vasos (idVasos, tipoSistema, nome, descricao) -- membro superior
+	VALUES (1, 'arteria', 'Subclávia', 'Encéfalo e medula espinhal, pescoço e ombro (origina as artérias dos membros superiores)'),
+		   (2, 'arteria', 'Axilar', 'Ombros, musculos torácicos e escapulares do úmero'),
+		   (3, 'arteria', 'Braquial', 'Braço'),
+		   (4, 'arteria', 'Radial', 'Face lateral do antebraço, punho e mão'),
+		   (5, 'arteria', 'Ulnar', 'Face medial do antebraço, punho e mão'),
+		   (6, 'arteria', 'Arco superficial palmar', 'Palma da mão e dedos (formado principalmente pela artéria ulnar)'),
+		   (7, 'arteria', 'Arco profundo palmar', 'Palma da mão e dedos (formado principalmente pela artéria radial)'),
+		   (8, 'veia', 'Cefálica', 'Superficial - drena a face lateral do membro superior'),
+		   (9, 'veia', 'Basílica', 'Superficial - drena a face medial do membro superior'),
+		   (10, 'veia', 'Mediana', 'Superficial - drena a palma da mão e antebraço'),
+		   (11, 'veia', 'Radial', 'Profunda - drena a face medial do antebraço'),
+		   (12, 'veia', 'Ulnar', 'Profunda - drena a face lateral do antebraço'),
+		   (13, 'veia', 'Braquial', 'Profunda - drena o antebraço, cotovelo, braço e úmero'),
+		   (14, 'veia', 'Axilar', 'Profunda - drena o braço, axila, e a parede torácica súpero-lateral'),
+		   (15, 'veia', 'Subclávia', 'Profunda - drena o braço, pescoço e parede torácica');
+
+---------------------------------------------------------------------------------------------
+
+INSERT INTO orgaos (idOrgao, nome, tipoSistemaOrgao, funcaoGeral) -- respiratório
+	VALUES (1, 'Nariz', 'respiratório', 'Olfato. É na cavidade nasal que o ar é filtrado, umedecido e aquecido.'),
+		   (2, 'Faringe', 'respiratório', 'Serve de passagem de ar e alimento.'),
+		   (3, 'Laringe', 'respiratório', 'Passagem de ar, produzir som (voz), impedir que o alimento e objetos estranhos entrem no sistema respiratório.'),
+		   (4, 'Traqueia', 'respiratório', 'Conecta a laringe até os brônquios e facilitaexpulsão de mucosidades e corpos estranhos.'),
+		   (5, 'Brônquios', 'respiratório', 'Ligam a Traqueia aos pulmões'),
+		   (6, 'Pulmão', 'respiratório', 'Gerar trocas gasosas (hematose) através dos alvéolos.');
+
+---------------------------------------------------------------------------------------------
+
+INSERT INTO estruturasOrgaos (idEstOrgao, nome, descricao, descricaoAdicional, funcao, idOrgao) --nariz até traqueia
+	VALUES (1, 'Seios paranasais', 'A cavidade nasal contêm várias aberturas de drenagem, pelas quais o muco dos seios paranasais é drenado.', 'Os Seios Paranasais compreendem os seios maxilares, frontal, etmoidal e o esfenoidal.', 'Drenagem, filtragem e umidificação do ar', 1),
+		   (2, 'Nasofaringe', 'A porção superior da faringe', 'Primeira parte da faringe', 'Comunicações: duas com as coanas, dois óstios faríngeos das tubas auditivas e com a orofaringe.', 2),
+		   (3, 'Orofaringe', 'A parte intermediária da faringe, atrás da cavidade oral e estende-se do palato mole até o nível do hioide.', 'Segunda parte da faringe', 'Tem comunicação com a boca e serve de passagem tanto para o ar como para o alimento.', 2),
+		   (4, 'Laringofaringe', 'Estende-se para baixo a partir do osso hioide, e conecta-se com o esôfago (canal do alimento) e anteriormente com a laringe (passagem de ar).', 'Terceira parte da faringe.', 'Como a parte oral da faringe, a laringofaringe é uma via respiratória e também uma via digestória.', 2),
+		   (5, 'Cartilagem Tireóidea', 'Possui cornos superiores e inferiores.', 'é maior nos homens devido à influência dos hormônios durante a fase da puberdade.', 'Forma a parede anterior e lateral da laringe, ', 3),
+		   (6, 'Cartilagem Cricoide', ' localiza-se logo abaixo da cartilagem tireoide e antecede a traqueia.', '', 'tipo de cartilagem', 3),
+		   (7, 'Laringofaringe', 'Epiglote', 'Se fixa no osso hioide e na cartilagem tireoide.', 'A epiglote é uma espécie de “porta” para o pulmão, onde apenas o ar ou substâncias gasosas entram e saem dele. Dirigindo substâncias líquidas e sólidas ao esôfago', 3),
+		   (8, 'Cartilagem Aritenoide', 'Articula-se com a cartilagem cricoide, estabelecendo uma articulação do tipo diartrose.', '', 'influenciam as posições e tensões das pregas vocais.', 3),
+		   (9, 'Cartilagem Corniculada', 'Um dos pares de cartilagens do esôfago', '', 'Situa-se acima da cartilagem aritenoide.', 3),
+		   (10, 'Cartilagem Cuneiforme', 'é muito pequena e localiza-se anteriormente à cartilagem corniculada correspondente', '', 'Liga cada aritenoide à epiglote.', 3),
+
+---------------------------------------------------------------------------------------------
+
+INSERT INTO sistemaNervosoCentral (idSNC, nome, regiao, funcao) -- medula e tronco
+	VALUES (1, 'Medula espinhal', 'Do bulbo a nível de L2', 'Enviar e receber estimulos sensitivos e motores (cerebro-nervo)'),
+		   (2, 'Bulbo', 'Tronco encefálico', 'Centro vital, vasomotor e de vômito'),
+		   (3, 'Ponte', 'Tronco encefálico', 'Reflexos autonômicos, possui núcleos dos nervos cranianos (5-8) e o quarto ventrículo, controle respiratório e sono, conexão com cerebelo, funções motoras e sensoriais.'),
+		   (4, 'Mesencéfalo', 'Tronco encefálico', 'Controle motor, processamento visual e auditivo, funções sensoriais e de condução, controle da pupila e olhos, coordenação dos reflexos, regulação da ativação e do estado de vigília.');
 
 ---------------------------------------------------------------------------------------------
 

@@ -15,9 +15,6 @@ Tendo como base o desafio de relacionar as estruturas anatômicas, o Projeto Sis
 ### Diagrama Conceitual
 
 O diagrama conceitual é uma forma de verificar a organização do banco de dados relacional, com a utilização do brModelo v3, podemos abrir os diagramas.
-```bash
-exemplo de código de instalação
-```bash
 
  Instalação
 ```Utilizando brModelo

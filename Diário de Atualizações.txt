@@ -24,3 +24,11 @@ Pequenas edições em DDL e DML
 15-07-2024
 
 Atualizações no DDL e DML, principalmente em tabelas de órgãos, vasos e nervos.
+
+18-07-2024
+
+Adição de itens em tabelas órgãos, vasos e tabelas de relacionamento. Também foram criadas novas consultas.
+
+19-07-2024
+
+Utilização de ChatGPT (duplicação) para realizar novas adições

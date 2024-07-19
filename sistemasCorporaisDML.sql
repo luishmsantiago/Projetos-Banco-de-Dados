@@ -26,25 +26,39 @@ INSERT INTO musculos (idMusculo, nome, descricao) -- braço
 		   (10, 'Tríceps braquial', 'Dividido em porções longa (t. infra-glenoidal), média (abaixo suco radial) e lateral (acima suco radial)');
 
 ---------------------------------------------------------------------------------------------
+--funcaoSNA se divide em sensorial, simpático ou parassimpático
 
 INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas, funcaoSNA, funcaoOrgao, tipoNervo) -- ombro
-	VALUES (1, 'Axilar', 'C5 e C6', '', '', 'nervo periférico'),
-	       (2, 'Supra-escapular', 'C5 e C6', '', '', 'nervo periférico'),
-	       (3, 'Subescapular Inferior', 'C5 e C6', '', '', 'nervo periférico');
+	VALUES (1, 'Axilar', 'C5 e C6', '', '', 'periférico'),
+	       (2, 'Supra-escapular', 'C5 e C6', '', '', 'periférico'),
+	       (3, 'Subescapular Inferior', 'C5 e C6', '', '', 'periférico');
 
-INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas, funcaoSNA, funcaoOrgao, tipoNervo) -- braço
-	VALUES (4, 'Musculocutâneo', 'C5 e C6', '', '', 'nervo periférico'),
-		   (5, 'Radial', 'C7 e C8', '', '', 'nervo periférico');
-
+INSERT INTO nervosPeriSna (idNervo, nome, raizesNervosas, funcaoSNA, funcaoOrgao, tipoNervo) -- braço + sist resp
+	VALUES (4, 'Musculocutâneo', 'C5 e C6', '', '', 'periférico'),
+		   (5, 'Radial', 'C7 e C8', '', '', 'periférico'),
+		   (6, 'Vago', 'Bulbo (tronco encefálico)', 'parassimpático', 'Regula a frequência cardíaca e outras funções viscerais', 'craniano'),
+		   (7, 'Trigêmeo', 'tronco encefálico', 'sensorial', 'Inerva a cavidade nasal e os seios paranasais, fornecendo sensibilidade à mucosa nasal e aos seios', 'craniano'),
+		   (8, 'Olfatório ', 'Bulbo olfatório', 'sensorial', 'Responsável pela sensibilidade olfatória, inerva a mucosa olfatória no nariz.', 'craniano');
 ---------------------------------------------------------------------------------------------
 
-INSERT INTO sncentralPeriSna (idConexao, caminhoImpulso, descricao, idSNC, idNervo) -- membro superior
+INSERT INTO sistemaNervosoCentral (idSNC, nome, regiao, funcao) -- medula e tronco
+	VALUES (1, 'Medula espinhal', 'Do bulbo a nível de L2', 'Enviar e receber estimulos sensitivos e motores (cerebro-nervo)'),
+		   (2, 'Bulbo', 'Tronco encefálico', 'Centro vital, vasomotor e de vômito'),
+		   (3, 'Ponte', 'Tronco encefálico', 'Reflexos autonômicos, possui núcleos dos nervos cranianos (5-8) e o quarto ventrículo, controle respiratório e sono, conexão com cerebelo, funções motoras e sensoriais.'),
+		   (4, 'Mesencéfalo', 'Tronco encefálico', 'Controle motor, processamento visual e auditivo, funções sensoriais e de condução, controle da pupila e olhos, coordenação dos reflexos, regulação da ativação e do estado de vigília.'),
+		   (5, 'Bulbo olfatório', 'Tronco encefálico', 'Processamento de sinais moleculares que levam ao sentido do cheiro');
+
+---------------------------------------------------------------------------------------------
+INSERT INTO sncentralPeriSna (idConexao, caminhoImpulso, descricao, idSNC, idNervo) -- membro superior - sist resp
 	VALUES (1, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 1),
 		   (2, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 2),
 		   (3, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 3),
 		   (4, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 4),
-		   (5, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 5);
-		   
+		   (5, 'Córtex Motor Primário → Trato Corticoespinal → Decussação das Pirâmides → Medula Espinhal Cervical → Raízes Nervosas Espinhais → Nervos Espinhais → Plexo Braquial', '', 1, 5),
+		   (6, 'Receptores sensoriais → Nervo Vago → Bulbo (núcleos sensoriais) → Tronco encefálico → Cérebro → Núcleos motores → Nervo Vago → Órgãos-alvo', '', 2, 6),
+		   (7, 'Receptores sensoriais → Ramos do Nervo Trigêmeo → Gânglio Trigeminal → Tronco encefálico (núcleos sensoriais) → Cérebro → Núcleos motores → Ramos do Nervo Trigêmeo → Músculos da mastigação', '', 3, 7),
+		   (8, 'Receptores olfativos → Nervos Olfatórios → Bulbo Olfatório → Trato Olfatório → Córtex olfatório e sistema límbico', '', 5, 8);
+
 ---------------------------------------------------------------------------------------------
 
 INSERT INTO vasos (idVasos, tipoSistema, nome, descricao) -- membro superior
@@ -86,18 +100,11 @@ INSERT INTO estruturasOrgaos (idEstOrgao, nome, descricao, descricaoAdicional, f
 		   (7, 'Laringofaringe', 'Epiglote', 'Se fixa no osso hioide e na cartilagem tireoide.', 'A epiglote é uma espécie de “porta” para o pulmão, onde apenas o ar ou substâncias gasosas entram e saem dele. Dirigindo substâncias líquidas e sólidas ao esôfago', 3),
 		   (8, 'Cartilagem Aritenoide', 'Articula-se com a cartilagem cricoide, estabelecendo uma articulação do tipo diartrose.', '', 'influenciam as posições e tensões das pregas vocais.', 3),
 		   (9, 'Cartilagem Corniculada', 'Um dos pares de cartilagens do esôfago', '', 'Situa-se acima da cartilagem aritenoide.', 3),
-		   (10, 'Cartilagem Cuneiforme', 'é muito pequena e localiza-se anteriormente à cartilagem corniculada correspondente', '', 'Liga cada aritenoide à epiglote.', 3),
+		   (10, 'Cartilagem Cuneiforme', 'é muito pequena e localiza-se anteriormente à cartilagem corniculada correspondente', '', 'Liga cada aritenoide à epiglote.', 3);
 
 ---------------------------------------------------------------------------------------------
 
-INSERT INTO sistemaNervosoCentral (idSNC, nome, regiao, funcao) -- medula e tronco
-	VALUES (1, 'Medula espinhal', 'Do bulbo a nível de L2', 'Enviar e receber estimulos sensitivos e motores (cerebro-nervo)'),
-		   (2, 'Bulbo', 'Tronco encefálico', 'Centro vital, vasomotor e de vômito'),
-		   (3, 'Ponte', 'Tronco encefálico', 'Reflexos autonômicos, possui núcleos dos nervos cranianos (5-8) e o quarto ventrículo, controle respiratório e sono, conexão com cerebelo, funções motoras e sensoriais.'),
-		   (4, 'Mesencéfalo', 'Tronco encefálico', 'Controle motor, processamento visual e auditivo, funções sensoriais e de condução, controle da pupila e olhos, coordenação dos reflexos, regulação da ativação e do estado de vigília.');
-
----------------------------------------------------------------------------------------------
-
+-- estruturas ósseas
 INSERT INTO estruturas (idEstrutura, nome, descricao, idOsso) --ombro
 	VALUES (1, 'acrômio', 'região lateral e anterior', 1),
 		   (2, 'espinha da escápula', 'projeção pontura em formato de linha', 1),
@@ -159,7 +166,7 @@ INSERT INTO inserir (idEstrutura, idMusculo) --braço
 
 
 ---------------------------------------------------------------------------------------------
-
+-- funcao muscular
 INSERT INTO funcao (idFuncao,tipoMovimento, funcaoComplementar) --ombro
 	VALUES (1, 'Abdução do braço', 'Deltoide ajuda nos movimentos do ombro e estabilização, supra-espinhal auxilia na estabilização do ombro'),
 		   (2, 'Rotação lateral do braço', 'auxilia na estabilização do ombro'),
@@ -188,7 +195,6 @@ INSERT INTO executar (idMusculo, idFuncao) -- ombro
 		   (6, 3),
 		   (6, 4);
 
-
 INSERT INTO executar (idMusculo, idFuncao) -- braço
 	VALUES (7, 6),
 		   (7, 7),
@@ -199,7 +205,7 @@ INSERT INTO executar (idMusculo, idFuncao) -- braço
 		   (10, 10);
 
 ---------------------------------------------------------------------------------------------
-
+--inervação muscular
 INSERT INTO inervar (idNervo, idMusculo) -- ombro
 	VALUES (1, 1),
 	       (2, 2),
@@ -208,7 +214,6 @@ INSERT INTO inervar (idNervo, idMusculo) -- ombro
 	       (3, 5),
 	       (3, 6);
 
-
 INSERT INTO inervar (idNervo, idMusculo) -- braço
 	VALUES (4, 7),
 		   (4, 8),
@@ -216,3 +221,69 @@ INSERT INTO inervar (idNervo, idMusculo) -- braço
 		   (5, 10);
 
 ---------------------------------------------------------------------------------------------
+INSERT INTO inervarOrgao (idNervo, idOrgao) -- Sistema resp
+	VALUES (7,1),
+		   (8,1),
+		   (6,2),
+		   (6,3),
+		   (6,4),
+		   (6,5),
+		   (6,6);
+
+---------------------------------------------------------------------------------------------
+INSERT INTO vascularizar (idOrgao, idSNC, idNervo, idVasos, idOsso, idMusculo)
+	VALUES 
+	-- Artéria Subclávia
+	(NULL, 1, NULL, 1, 1, NULL), -- Suprimento ao ombro e estruturas associadas
+	(NULL, 1, NULL, 1, 2, NULL), -- Suprimento à clavícula
+	(NULL, 1, NULL, 1, 3, NULL), -- Suprimento ao úmero
+	
+	-- Artéria Axilar
+	(NULL, NULL, NULL, 2, 1, 1), -- Suprimento ao deltoide
+	(NULL, NULL, NULL, 2, 1, 2), -- Suprimento ao supraespinal
+	(NULL, NULL, NULL, 2, 1, 3), -- Suprimento ao infraespinal
+	(NULL, NULL, NULL, 2, 1, 4), -- Suprimento ao redondo menor
+	(NULL, NULL, NULL, 2, 1, 5), -- Suprimento ao redondo maior
+	(NULL, NULL, NULL, 2, 1, 6), -- Suprimento ao subescapular
+	(NULL, NULL, NULL, 2, 3, 10), -- Suprimento ao tríceps braquial
+
+	-- Artéria Braquial
+	(NULL, NULL, NULL, 3, 3, 7), -- Suprimento ao bíceps braquial
+	(NULL, NULL, NULL, 3, 3, 8), -- Suprimento ao braquial anterior
+	(NULL, NULL, NULL, 3, 3, 9), -- Suprimento ao coracobraquial
+	
+	-- Artéria Radial
+	(NULL, NULL, NULL, 4, 4, NULL), -- Suprimento ao rádio
+	
+	-- Artéria Ulnar
+	(NULL, NULL, NULL, 5, 5, NULL), -- Suprimento à ulna
+	
+	-- Arco superficial palmar
+	(NULL, NULL, NULL, 6, NULL, NULL), -- Suprimento à palma da mão e dedos (principalmente pela artéria ulnar)
+	
+	-- Arco profundo palmar
+	(NULL, NULL, NULL, 7, NULL, NULL), -- Suprimento à palma da mão e dedos (principalmente pela artéria radial)
+	
+	-- Veia Cefálica
+	(NULL, NULL, NULL, 8, 3, NULL), -- Drenagem do úmero
+	
+	-- Veia Basílica
+	(NULL, NULL, NULL, 9, 3, NULL), -- Drenagem do úmero
+	
+	-- Veia Mediana
+	(NULL, NULL, NULL, 10, NULL, NULL), -- Drenagem da palma da mão e antebraço
+	
+	-- Veia Radial
+	(NULL, NULL, NULL, 11, 4, NULL), -- Drenagem da face medial do antebraço
+	
+	-- Veia Ulnar
+	(NULL, NULL, NULL, 12, 5, NULL), -- Drenagem da face lateral do antebraço
+	
+	-- Veia Braquial
+	(NULL, NULL, NULL, 13, 3, NULL), -- Drenagem do úmero
+	
+	-- Veia Axilar
+	(NULL, NULL, NULL, 14, NULL, NULL), -- Drenagem do braço e axila
+	
+	-- Veia Subclávia
+	(NULL, NULL, NULL, 15, NULL, NULL); -- Drenagem do braço e pescoço

@@ -38,7 +38,7 @@ CREATE TABLE orgaos (
 	idOrgao SERIAL PRIMARY KEY,
 	nome VARCHAR(60) NOT NULL,
 	tipoSistemaOrgao VARCHAR(30) NOT NULL,
-	funcaoGeral VARCHAR(100) NOT NULL
+	funcaoGeral VARCHAR(200) NOT NULL
 );
 
 CREATE TABLE sistemaNervosoCentral (
@@ -117,17 +117,18 @@ CREATE TABLE inervarOrgao (
 );
 
 CREATE TABLE vascularizar (
-	idOrgao INTEGER NOT NULL,
-	idSNC INTEGER NOT NULL,
-	idNervo INTEGER NOT NULL,
-	idVasos INTEGER NOT NULL,
-	idOsso INTEGER NOT NULL,
-	idMusculo INTEGER NOT NULL,
-	PRIMARY KEY (idOrgao, idSNC, idNervo, idVasos, idOsso, idMusculo),
-	FOREIGN Key (idOrgao) REFERENCES orgaos (idOrgao),
-	FOREIGN Key (idSNC) REFERENCES sistemaNervosoCentral (idSNC),
-	FOREIGN Key (idNervo) REFERENCES nervosPeriSna (idNervo),
-	FOREIGN Key (idVasos) REFERENCES vasos (idVasos),
-	FOREIGN Key (idOsso) REFERENCES ossos (idOsso),
-	FOREIGN Key (idMusculo) REFERENCES musculos (idMusculo)
+    idOrgao INTEGER,
+    idSNC INTEGER,
+    idNervo INTEGER,
+    idVasos INTEGER,
+    idOsso INTEGER,
+    idMusculo INTEGER,
+    FOREIGN KEY (idOrgao) REFERENCES orgaos (idOrgao),
+    FOREIGN KEY (idSNC) REFERENCES sistemaNervosoCentral (idSNC),
+    FOREIGN KEY (idNervo) REFERENCES nervosPeriSna (idNervo),
+    FOREIGN KEY (idVasos) REFERENCES vasos (idVasos),
+    FOREIGN KEY (idOsso) REFERENCES ossos (idOsso),
+    FOREIGN KEY (idMusculo) REFERENCES musculos (idMusculo),
+    UNIQUE (idOrgao, idSNC, idNervo, idVasos, idOsso, idMusculo)
 );
+

@@ -1,10 +1,5 @@
 --Algumas Query
 
-SELECT DISTINCT es.nome as origem_insercao, mu.nome as nome_musculo, fu.tipoMovimento as acao_muscular FROM inserir ins, estruturas es, executar ex, funcao fu, musculos mu
-	WHERE es.idEstrutura=ins.idEstrutura AND ins.idMusculo=mu.idMusculo AND mu.idMusculo=ex.idMusculo AND ex.idFuncao=fu.idFuncao
-
-SELECT os.nome as nome_osso, es.nome as nome_estrutura  FROM ossos os, estruturas es
-	WHERE os.idOsso=es.idOsso
 	
 ------Para verificar origem inserção e ação na mesma linha
 
@@ -53,3 +48,50 @@ GROUP BY
 	mu.nome
 ORDER BY
 	mu.nome;
+
+-- Selecionar nome dos nervos (periféricos e cranianos), raiz nervosa, função no SNA, tipo de nervo, 
+--caminho do impulso, onde está inserido no sistema nervoso central, e função no SNC
+
+SELECT
+	npesna.nome as nome_nervo,
+	STRING_AGG(DISTINCT npesna.raizesNervosas,', ') AS raizes_nervosas,
+	STRING_AGG(DISTINCT npesna.funcaoSNA, ', ') AS funcao_SNA,
+	STRING_AGG(DISTINCT npesna.tipoNervo, ', ') AS tipo_nervo,
+	STRING_AGG(DISTINCT sncpsna.caminhoImpulso, ', ') AS caminho_impulso,
+	STRING_AGG(DISTINCT snc.regiao, ', ') AS região_SNC,
+	STRING_AGG(DISTINCT snc.funcao, ', ') AS funcao_SNC
+FROM
+	sncentralPeriSna sncpsna
+JOIN
+	nervosPeriSna npesna ON npesna.idNervo=sncpsna.idNervo
+JOIN
+	sistemaNervosoCentral snc ON sncpsna.idSNC=snc.idSNC
+GROUP BY
+	npesna.nome
+ORDER BY
+	npesna.nome;
+
+-- Selecionar orgão, estruturas, vascularização, sua inervação, caminho do impulso
+
+SELECT 
+    o.nome AS organo_nome,
+    STRING_AGG(DISTINCT eo.nome, ', ') AS estruturas,
+    STRING_AGG(DISTINCT v2.nome, ', ') AS vasos,
+    STRING_AGG(DISTINCT n.nome, ', ') AS nervos,
+    STRING_AGG(DISTINCT s.caminhoImpulso, ', ') AS caminho_impulso
+FROM 
+    orgaos o
+LEFT JOIN 
+    estruturasOrgaos eo ON o.idOrgao = eo.idOrgao
+LEFT JOIN 
+    vascularizar v ON o.idOrgao = v.idOrgao
+LEFT JOIN 
+    vasos v2 ON v.idVasos = v2.idVasos
+LEFT JOIN 
+    inervarOrgao io ON o.idOrgao = io.idOrgao
+LEFT JOIN 
+    nervosPeriSna n ON io.idNervo = n.idNervo
+LEFT JOIN 
+    sncentralPeriSna s ON n.idNervo = s.idNervo
+GROUP BY 
+    o.idOrgao, o.nome;

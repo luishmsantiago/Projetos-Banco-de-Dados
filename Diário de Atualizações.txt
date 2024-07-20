@@ -31,4 +31,9 @@ Adição de itens em tabelas órgãos, vasos e tabelas de relacionamento. També
 
 19-07-2024
 
-Utilização de ChatGPT (duplicação) para realizar novas adições
+Utilização de ChatGPT (duplicação) para realizar novas adições -> Após muitos testes, o chatGPT não consegue ainda automatizar o serviço, este retornando a se tornar manual, mas que pode as vezes ter adições automatizadas.
+
+20-07-2024
+
+Tentei novamente utilizar o chatGPT para adição de novos itens nas tabelas, porém ainda é necessário ampla revisão. Estou testando o phind para ver se poderá me ajudar mais.
+

@@ -37,3 +37,6 @@ Utilização de ChatGPT (duplicação) para realizar novas adições -> Após mu
 
 Tentei novamente utilizar o chatGPT para adição de novos itens nas tabelas, porém ainda é necessário ampla revisão. Estou testando o phind para ver se poderá me ajudar mais.
 
+22-07-2024
+
+Deixei de lado o chatGPT e retornei a fazer adições na tabela de estrutura manualmente com bastante cuidado. Após me perder e haver alguns erros, decidi separar o arquivo "SistemasCorporaisDML.sql" em vários arquivos na pasta "tabelas". Assim fica mais fácil ter controle dos relacionamentos entre as tabelas.

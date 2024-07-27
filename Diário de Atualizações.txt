@@ -44,3 +44,7 @@ Deixei de lado o chatGPT e retornei a fazer adições na tabela de estrutura man
 26-07-2024
 
 Retornei a atualizar as tabelas manualmente. Atualizei as tabelas "estrutura" e "inserir". Agora a tabela de relacionamento está completa para o antebraço e mão. Então, é possível já relacionar insersões, ossos e músculos de todo o membro superior. 
+
+27-07-2024
+
+Reservei as tabelas em SQL e busquei outras formas de criar uma prototipação com menor qualidade em python. Com algumas tabelas encontradas na internet, foram feitas análise e manipulação para que fosse possível utilizá-las e no futuro fazer associações entre as tabelas.

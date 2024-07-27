@@ -40,3 +40,7 @@ Tentei novamente utilizar o chatGPT para adição de novos itens nas tabelas, po
 22-07-2024
 
 Deixei de lado o chatGPT e retornei a fazer adições na tabela de estrutura manualmente com bastante cuidado. Após me perder e haver alguns erros, decidi separar o arquivo "SistemasCorporaisDML.sql" em vários arquivos na pasta "tabelas". Assim fica mais fácil ter controle dos relacionamentos entre as tabelas. Foi adicionado a tabela de estruturas os pontos de fixação muscular dos músculos do antebraço e da mão. Também foram colocados alguns comentários no "mainGPT.sql" para que ficasse mais organizado.
+
+26-07-2024
+
+Retornei a atualizar as tabelas manualmente. Atualizei as tabelas "estrutura" e "inserir". Agora a tabela de relacionamento está completa para o antebraço e mão. Então, é possível já relacionar insersões, ossos e músculos de todo o membro superior. 

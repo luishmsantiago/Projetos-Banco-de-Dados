@@ -40,7 +40,7 @@ INSERT INTO musculos (idMusculo, nome, descricao) -- antebraço e mão
     (31, 'Extensor do 2° dedo (indicador)', 'Músculo do antebraço responsável pela extensão do segundo dedo.'),
     -- Mão
     (32, 'Palmar curto', 'Músculo da mão responsável pela adução da pele da palma da mão.'),
-    (33, 'Lombricóides', 'Músculos da mão responsáveis pela flexão das falanges proximais e extensão das falanges médias e distais dos dedos.'),
+    (33, 'Lombricóides', 'São 4 músculos, o polegar não possui.'),
     (34, 'Interósseos dorsais', 'Músculos da mão responsáveis pela abdução dos dedos.'),
     (35, 'Interósseos palmares', 'Músculos da mão responsáveis pela adução dos dedos.'),
     (36, 'Abdutor curto do polegar', 'Músculo da mão responsável pela abdução do polegar.'),
@@ -48,7 +48,7 @@ INSERT INTO musculos (idMusculo, nome, descricao) -- antebraço e mão
     (38, 'Flexor curto do polegar', 'Músculo da mão responsável pela flexão do polegar.'),
     (39, 'Oponente do polegar', 'Músculo da mão responsável pela oposição do polegar.'),
     (40, 'Abdutor do mínimo', 'Músculo da mão responsável pela abdução do dedo mínimo.'),
-    (41, 'Flexor do mínimo', 'Músculo da mão responsável pela flexão do dedo mínimo.'),
+    (41, 'Flexor curto do mínimo', 'Músculo da mão responsável pela flexão do dedo mínimo.'),
     (42, 'Oponente do mínimo', 'Músculo da mão responsável pela oposição do dedo mínimo.');
 
 ---------------------------------------------------------------------------------------------

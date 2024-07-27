@@ -18,7 +18,7 @@ INSERT INTO estruturas (idEstrutura, nome, descricao, idOsso) --ombro e braço
 INSERT INTO estruturas (idEstrutura, nome, descricao, idOsso) --braço
 	VALUES (12, 'tubérculo supra-glenoidal', 'acima da glenóide', 1),
 		   (13, 'processo coracóide', 'projeção anterior na escápuna', 1),
-		   (14, 'tubérculo radial', '', 4),
+		   (14, 'tubérculo radial', 'Proeminência na extremidade proximal do rádio', 4),
 		   (15, 'metade distal do úmero', 'podendo ser face anterior ou posterior', 3),
 		   (16, 'processo coronoide', 'proeminência inferior a tróclea da ulna', 5),
 		   (17, 'tuberosidade da ulna', '', 5),
@@ -38,7 +38,7 @@ VALUES
     (27, 'Crista do Rádio', 'Linha óssea ao longo da face lateral do rádio', 4),
     (28, 'Linha Interósea', 'Linha ao longo da face medial do rádio', 4),
     (29, 'Cabeça do Rádio', 'Extremidade proximal do rádio', 4),
-    (30, 'Tuberosidade do Rádio', 'Proeminência na extremidade proximal do rádio', 4),
+    (30, 'Face anterior do Rádio', '', 4),
     (31, 'Processo Estiloide do Rádio', 'Proeminência na extremidade distal do rádio', 4),
     (32, 'Processo Estiloide da Ulna', 'Proeminência na extremidade distal da ulna', 5),
     (33, 'Ligamento colateral da Ulna', 'conecta a base da falange proximal do polegar ao osso metacarpal no aspecto ulnar da articulação', 5),
@@ -83,11 +83,15 @@ VALUES
     (69, 'Crista do Metacarpo', 'Linha óssea ao longo dos metacarpos', 33); -- Metacarpo
     (70, 'face anterior da falange intermédia', 'também possui face posterior. presente no segundo ao quinto dedos', 35),
     (71, 'Face anterior da falange distal', 'também possui face posterior. presente no segundo ao quinto dedos', 36),
-    (72, 'base da falange intermédia', 'também possui face posterior. presente no segundo ao quinto dedos', 35),
-    (73, 'Face da falange distal', 'também possui face posterior. presente no segundo ao quinto dedos', 36),
+    (72, 'base da falange média', 'também possui face posterior. presente no segundo ao quinto dedos', 35),
+    (73, 'bace da falange distal', 'também possui face posterior. presente no segundo ao quinto dedos', 36),
     (74, 'base da falange distal', 'parte do polegar', '', 21),
     (75, 'Tendão do extensor comum para o 5º dedo', '', 30),
     (76, 'Tendão do extensor comum do 2º dedo', '', 23),
     (77, 'Tendão do músculo flexor profundo dos dedos', 'presente apenas do segundo ao quinto dedo', 36),
-    (78, 'Tendão do músculo extensor dos dedos', 'presente apenas do segundo ao quinto dedo', 35);
+    (78, 'Tendão do músculo extensor dos dedos', 'presente apenas do segundo ao quinto dedo', 35),
+    (79, 'corpo do primeiro metacarpal', '', 14),
+    (80, 'corpo do quinto metacarpal', '', 18),
+    (81, 'corpo do segundo metacarpal', '', 15),
+    (82, 'corpo do terceiro metacarpal', '', 16);
 ---------------------------------------------------------------------------------------------

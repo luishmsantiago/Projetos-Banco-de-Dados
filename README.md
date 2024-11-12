@@ -21,6 +21,9 @@ O diagrama conceitual é uma forma de verificar a organização do banco de dado
 Baixe a pasta brModelo-Official-Versions-master -> brModelo_v3 -> brModelo_v3.jar -> com ele aberto clique em Arquivo -> Abrir -> selecione o diagrama que deseja acessar.
 Requisito para o brModelo: ter Java instalado no computador.
 ```
+![Diagrama Conceitual](relative/path/in/repository/to/diagrama_conceitual.png)
+
+
 
 ### Diagrama Lógico
 

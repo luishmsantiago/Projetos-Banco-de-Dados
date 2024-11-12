@@ -22,7 +22,9 @@ Baixe a pasta brModelo-Official-Versions-master -> brModelo_v3 -> brModelo_v3.ja
 Requisito para o brModelo: ter Java instalado no computador.
 ```
 
+
 ![Diagrama Conceitual](https://github.com/luishmsantiago/Projetos-Banco-de-Dados/blob/main/diagrama_conceitual.png)
+
 
 ### Diagrama Lógico
 
@@ -31,6 +33,10 @@ O diagrama lógico é uma forma de verificar a como ficará os esquemas de relac
 ```Utilizando brModelo
 Siga a mesma instrução do diagrama conceitual.
 ```
+
+
+![Diagrama Lógico](https://github.com/luishmsantiago/Projetos-Banco-de-Dados/blob/main/diagrama_logico.png)
+
 
 ### PostgreSQL
 
